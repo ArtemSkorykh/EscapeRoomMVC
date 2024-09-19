@@ -32,11 +32,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "user",
-    pattern: "user/{controller=User}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "admin",
-    pattern: "admin/{controller=Admin}/{action=Index}/{id?}");
+    pattern: "{controller=Admin}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

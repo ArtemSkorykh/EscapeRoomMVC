@@ -38,39 +38,39 @@ h2 {
     border-collapse: collapse;
 }
 
-    .table th, .table td {
-        padding: 12px;
-        text-align: left;
-        border: 1px solid #dee2e6;
-    }
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
 
-    .table th {
-        background-color: #007bff;
-        color: white;
-    }
+.table th {
+    background-color: #007bff;
+    color: white;
+}
 
-    .table img {
-        max-width: 100px;
-        height: auto;
-    }
+.table img {
+    max-width: 100px;
+    height: auto;
+}
 
 .pagination {
     margin-top: 20px;
 }
 
-    .pagination a {
-        margin: 0 5px;
-        padding: 5px 10px;
-        text-decoration: none;
-        border: 1px solid #007bff;
-        border-radius: 5px;
-        color: #007bff;
-    }
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+}
 
-        .pagination a.active {
-            background-color: #007bff;
-            color: white;
-        }
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+}
 
 .form-group {
     margin-bottom: 15px;
@@ -81,7 +81,7 @@ h2 {
     border-color: #007bff;
 }
 
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }    
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}    
