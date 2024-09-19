@@ -18,7 +18,7 @@ namespace EscapeRoomMVC.Controllers
 
         // GET: user/EscapeRoom
         [HttpGet]
-        public async Task<IActionResult> Index(int? minPlayers, int? maxPlayers, int? fearLevel, int? difficultyLevel)
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 5, int? minPlayers = null, int? maxPlayers = null, int? fearLevel = null, int? difficultyLevel = null)
         {
             var query = _context.EscapeRooms.AsQueryable();
 
@@ -39,7 +39,15 @@ namespace EscapeRoomMVC.Controllers
                 query = query.Where(e => e.DifficultyLevel == difficultyLevel.Value);
             }
 
-            var escapeRooms = await query.ToListAsync();
+            var totalCount = await query.CountAsync();
+            var escapeRooms = await query.Skip((pageNumber - 1) * pageSize)
+                                          .Take(pageSize)
+                                          .ToListAsync();
+
+            ViewBag.TotalCount = totalCount;
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.PageSize = pageSize;
+
             return View(escapeRooms);
         }
 

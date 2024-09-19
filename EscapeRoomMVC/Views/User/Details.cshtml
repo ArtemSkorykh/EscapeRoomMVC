@@ -1,24 +1,20 @@
 ﻿@model EscapeRoomMVC.Models.EscapeRoom
 
 @{
-    ViewData["Title"] = "Детали квест-комнаты";
+    ViewData["Title"] = Model.Name; 
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2>Детали квест-кімнати</h2>
+
+<escape-room-card escape-room="Model"></escape-room-card>
 
 <div>
-    <h3>@Model.Name</h3>
-    <p><strong>Описание:</strong> @Model.Description</p>
-    <p><strong>Время прохождения:</strong> @Model.Duration minutes</p>
-    <p><strong>Мин. количество игроков:</strong> @Model.MinPlayers</p>
-    <p><strong>Макс. количество игроков:</strong> @Model.MaxPlayers</p>
-    <p><strong>Мин. возраст игроков:</strong> @Model.MinAge</p>
+    <h4>Дополнительная информация</h4>
     <p><strong>Адрес:</strong> @Model.Address</p>
-    <p><strong>Телефон:</strong> @Model.PhoneNumber</p>
+    <p><strong>Номера телефонов:</strong> @Model.PhoneNumber</p>
     <p><strong>Email:</strong> @Model.Email</p>
     <p><strong>Компания:</strong> @Model.Company</p>
     <p><strong>Рейтинг:</strong> @Model.Rating</p>
-    <p><strong>Уровень страха:</strong> @Model.FearLevel</p>
-    <p><strong>Уровень сложности:</strong> @Model.DifficultyLevel</p>
-    <img src="@Model.Logo" alt="Логотип" />
 </div>
+
+<a asp-action="Index" class="btn btn-primary">Назад к списку</a>
