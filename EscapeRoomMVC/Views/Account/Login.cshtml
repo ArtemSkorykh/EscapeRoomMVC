@@ -1,0 +1,28 @@
+﻿@model EscapeRoomMVC.ViewModels.LoginViewModel
+
+<h2>Вход пользователя</h2>
+<form method="post" asp-controller="Account" asp-action="Login">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label>
+            <input asp-for="RememberMe" type="checkbox" /> Запомнить меня
+        </label>
+    </div>
+    <div>
+        <input type="submit" value="Войти" />
+    </div>
+</form>
+
+<div>
+    <p>Нет аккаунта? <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a></p>
+</div>

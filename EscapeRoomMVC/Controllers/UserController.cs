@@ -1,5 +1,6 @@
 ﻿using EscapeRoomMVC.Data;
 using EscapeRoomMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ namespace EscapeRoomMVC.Controllers
 {
     [Route("user/[controller]")]
     [ApiController]
+    [Authorize(Roles = "User")]
     public class UserController : Controller
     {
         private readonly EscapeRoomDB _context;

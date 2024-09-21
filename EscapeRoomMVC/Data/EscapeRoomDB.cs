@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using EscapeRoomMVC.Models;
 
 namespace EscapeRoomMVC.Data
 {
-    public class EscapeRoomDB : DbContext
+    public class EscapeRoomDB : IdentityDbContext<User>
     {
         public EscapeRoomDB(DbContextOptions<EscapeRoomDB> options) : base(options) { }
 
